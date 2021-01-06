@@ -11,9 +11,6 @@ const msg = [
   'A',
   '0',
   '',
-  'GET /smuggled HTTP/1.1',
-  'Host: 127.0.0.1',
-  '',
   '',
 ].join('\r\n')
 

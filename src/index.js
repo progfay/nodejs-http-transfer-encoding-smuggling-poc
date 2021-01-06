@@ -11,9 +11,6 @@ const msg = [
   'A',
   '0',
   '',
-  'GET /smuggled HTTP/1.1',
-  'Host: 127.0.0.1',
-  '',
   '',
 ].join('\r\n')
 
@@ -29,8 +26,8 @@ const server = http.createServer((req, res) => {
     })
 })
 
-server.listen(3000, () => {
-  const client = net.connect(3000, 'localhost')
+server.listen(0, () => {
+  const client = net.connect(server.address().port, 'localhost')
   client.setEncoding('utf8')
   client.on('error', console.error)
   client.on('data', data => { console.log({ data }) })
